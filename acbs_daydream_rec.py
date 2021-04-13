@@ -5,20 +5,30 @@
 
 S=input()
 
-def rec(s):
+def rec(s,w):
     if len(s)==0:
         return True
-    else:
-        if s[0:5]=='dream':
-            rslt=rec(s[5:])
-        elif s[0:7]=='dreamer':
-            rslt=rec(s[7:])
-        elif s[0:5]=='erase':
-            rslt=rec(s[5:])
-        elif s[0:6]=='eraser':
-            rslt=rec(s[6:])
+
+    if len(w)==5:
+        if s[:5]=='dream' or 'erase':
+            s=s[5:]
         else:
             return False
-        
-rslt=rec(S)
-print(rslt)
+    if len(w)==6:
+        if s[:6]=='eraser':
+            s=s[6:]
+        else:
+            return False
+    if len(w)==7:
+        if s[:7]=='dreamer':
+            s=s[7:]
+        else:
+            return False
+    
+    rslt=rec(s,'dream') or rec(s,'dreamer') or rec(s,'erase') or rec(s,'eraser')
+    
+    return rslt
+
+ans=rec(S,'')
+
+print(ans)
