@@ -1,11 +1,16 @@
-divide=[0,7,11,16,20,28,34,38,45]
+# N,L=map(int,input().split())
+# K=int(input())
+# cut_positon=list(map(int,input().split()))
 
-size=[]
+N=7
+L=45
+K=2
+cut_positon=[7,11,16,20,28,34,38]
 
-s=0
-for i in range(1,len(divide)):
-    temp=divide[i]-divide[i-1]
-    size.append(temp)
 
-print(size)
+equal_L=L/(K+1)
+
+for i in range(N):
+    equal_L-cu
+    
 
